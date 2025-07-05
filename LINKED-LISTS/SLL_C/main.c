@@ -31,44 +31,43 @@ int main()
         switch (choice)
         {
             case 1:
-            printf("Enter data: ");
-            scanf("%d", &data);
+                printf("Enter data: ");
+                scanf("%d", &data);
                 insertAtBeg(&list, data);
                 break;
-                case 2:
+            case 2:
                 printf("Enter Data: ");
                 scanf("%d", &data);
                 insertAtEnd(&list, data);
                 break;
-                case 3:
+            case 3:
                 printf("Enter data and position (separate with space): ");
                 scanf("%d %d", &data, &pos);
                 insertAtPos(&list, data, pos);
                 break;
-                case 4:
+            case 4:
                 deleteAtBeg(&list);
                 break;
             case 5:
                 deleteAtEnd(&list);
                 break;
-                case 6:
+            case 6:
                 printf("Enter position to delete: ");
                 scanf("%d", &pos);
                 deleteAtPos(&list, pos);
                 break;
-                case 7:
+            case 7:
                 display(&list);
                 break;
-                case 8:
+            case 8:
                 printf("Enter element to search: ");
                 scanf("%d", &data);
                 search(&list, data);
                 break;
-                case 9:
+            case 9:
                 release(&list);
-                printf("Exiting...\n");
                 break;
-                default:
+            default:
                 printf("Invalid choice! Please try again.\n");
             }
         printf("Press Enter...\n");

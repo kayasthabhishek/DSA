@@ -23,7 +23,7 @@ void deleteAtBeg(SLL* list);
 void deleteAtEnd(SLL* list);
 void deleteAtPos(SLL* list, int pos);
 void display(const SLL* list);
-void search(const SLL* list, int data);
+void search(const SLL* list, int key);
 void release(SLL* list);
 
 #endif

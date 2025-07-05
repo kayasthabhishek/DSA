@@ -29,8 +29,8 @@ void insertAtBeg(SLL* list, int data)
     {
         newNode->next = list->head;
         list->head = newNode;
-        printf("SUCCESSFULLY INSERTED %d AT THE BEGINNING\n", data);
     }
+    printf("SUCCESSFULLY INSERTED %d AT THE BEGINNING\n", data);
 }
 
 
@@ -47,6 +47,7 @@ void insertAtEnd(SLL* list, int data)
         list->tail->next = newNode;  // Links current last node to the new node
         list->tail = newNode;  // don't lose track of the last node
     }
+    printf("SUCCESSFULLY INSERTED %d AT THE END\n", data);
 }
 
 
@@ -85,6 +86,8 @@ void insertAtPos(SLL* list, int data, int pos)
         // A -> B -> new -> C
         newNode->next = current->next;
         current->next = newNode;
+        if (newNode->next == NULL) // If new node is inserted at the end update tail
+            list->tail = newNode;
         printf("SUCCESSFULLY INSERTED %d AT POSITION %d\n", data, pos);
     }
 }
@@ -205,7 +208,7 @@ void display(const SLL* list)
 }
 
 
-void search(const SLL* list, int data)
+void search(const SLL* list, int key)
 {
     int flag = 0, index = 1;
 
@@ -218,9 +221,9 @@ void search(const SLL* list, int data)
     Node* current = list->head;
     while (current != NULL)
     {
-        if (current->data == data)
+        if (current->data == key)
         {
-            printf("ELEMENT %d FOUND AT POSITION %d\n", data, index);
+            printf("ELEMENT %d FOUND AT POSITION %d\n", key, index);
             flag = 1;
             break;
         }
@@ -229,23 +232,23 @@ void search(const SLL* list, int data)
     }
 
     if (!flag)
-        printf("ELEMENT %d NOT FOUND\n", data);
+        printf("ELEMENT %d NOT FOUND\n", key);
 }
 
 
 void release(SLL* list)
 {
-    Node* current = list->head;
-    Node* nextNode;
+    Node* temp;
+    Node* i = list->head;
 
-    while (current != NULL)
+    while (i != NULL)
     {
-        nextNode = current->next;
-        free(current);
-        current = nextNode;
+        temp = i;
+        i = i->next;
+        free(temp);
     }
 
     list->head = list->tail = NULL;
-    printf("LIST RELEASED SUCCESSFULLY\n");
+    printf("LIST MEMORY RELEASED SUCCESSFULLY\n");
 }
 
