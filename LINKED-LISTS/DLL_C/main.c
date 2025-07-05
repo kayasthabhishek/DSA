@@ -10,34 +10,34 @@ int main()
     
     do
     {
-        printf("\n1. Insert at beginning\n");
-        printf("2. Insert at end\n");
-        printf("3. Insert at position\n");
-        printf("4. Delete node from beginning\n");
-        printf("5. Delete node from end\n");
-        printf("6. Delete node from position\n");
-        printf("7. Length of List\n");
-        printf("8. Linear search\n");
-        printf("9. Display list\n");
-        printf("10. Display list in reverse order\n");
-        printf("11. Exit\n");
-        printf("Enter your choice: ");
+        printf("\n1. INSERT AT BEGINNING\n");
+        printf("2. INSERT AT END\n");
+        printf("3. INSERT AT POSITION\n");
+        printf("4. DELETE NODE FROM BEGINNING\n");
+        printf("5. DELETE NODE FROM END\n");
+        printf("6. DELETE NODE FROM POSITION\n");
+        printf("7. LENGTH OF LIST\n");
+        printf("8. LINEAR SEARCH\n");
+        printf("9. DISPLAY LIST\n");
+        printf("10. DISPLAY LIST IN REVERSE ORDER\n");
+        printf("11. EXIT\n");
+        printf("ENTER YOUR CHOICE: ");
         scanf("%d", &choice);
 
         switch (choice)
         {
             case 1:
-                printf("Enter value: ");
+                printf("ENTER VALUE: ");
                 scanf("%d", &value);
                 insert_at_beg(value);
                 break;
             case 2:
-                printf("Enter value: ");
+                printf("ENTER VALUE: ");
                 scanf("%d", &value);
                 insert_at_end(value);
                 break;
             case 3:
-                printf("Enter value and position (separate with space): ");
+                printf("ENTER VALUE AND POSITION (SEPARATE WITH SPACE): ");
                 scanf("%d %d", &value, &pos);
                 insert_at_pos(value, pos);
                 break;
@@ -48,15 +48,15 @@ int main()
                 delete_node_from_end();
                 break;
             case 6:
-                printf("Enter position to delete: ");
+                printf("ENTER POSITION TO DELETE: ");
                 scanf("%d", &pos);
                 delete_node_from_pos(pos);
                 break;
             case 7:
-                printf("Length of List: %d\n", getlen());
+                printf("LENGTH OF LIST: %d\n", getlen());
                 break;
             case 8:
-                printf("Enter element to search: ");
+                printf("ENTER ELEMENT TO SEARCH: ");
                 scanf("%d", &value);
                 linear_search(value);
                 break;
@@ -72,7 +72,7 @@ int main()
             default:
                 printf("INVALID CHOICE! TRY AGAIN.\n");
         }
-        printf("Press Enter...\n");
+        printf("PRESS ENTER...\n");
         getchar(); getchar();
         if (system("clear") != 0)
             system("cls");

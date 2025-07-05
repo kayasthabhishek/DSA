@@ -5,14 +5,14 @@ using namespace std;
 SLL::SLL() : head(nullptr), tail(nullptr)
 {
     cout << "SINGLY LINKED LIST IMPLEMENTATION" << endl;
-    cout << "SLL created successfully." << endl;
+    cout << "SLL CREATED SUCCESSFULLY." << endl;
 }
 
 Node* SLL::createNode(int data)
 {
     Node* newNode = new Node(data);
     if (!newNode) {
-        cerr << "Memory allocation failed!" << endl;
+        cerr << "MEMORY ALLOCATION FAILED!" << endl;
         exit(EXIT_FAILURE);
     }
     return newNode;
@@ -45,7 +45,7 @@ void SLL::insertAtEnd(int data)
 void SLL::insertAtPos(int data, int pos)
 {
     if (pos < 1) {
-        cerr << "Invalid position!" << endl;
+        cerr << "INVALID POSITION!" << endl;
         return;
     }
     if (pos == 1 || head == nullptr) {
@@ -120,7 +120,7 @@ void SLL::deleteAtEnd()
 void SLL::deleteAtPos(int pos)
 {
     if (pos < 1) {
-        cerr << "Invalid position!" << endl;
+        cerr << "INVALID POSITION!" << endl;
         return;
     }
     else if (head == nullptr) {

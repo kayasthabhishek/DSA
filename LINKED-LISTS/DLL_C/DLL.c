@@ -73,14 +73,14 @@ void insert_at_pos(int value, int pos)
     temp = head;
     int i;
     for (i = 1; i < pos - 1; ++i) {
+        if (temp == NULL) {
+            printf("POSITION OUT OF BOUNDS\n");
+            free(newNode);
+            return;
+        }
         temp = temp->next;
     }
 
-    if (temp == NULL) {
-        printf("POSITION OUT OF BOUNDS\n");
-        free(newNode);
-        return;
-    }
 
     newNode->next = temp->next;
     newNode->prev = temp;

@@ -10,31 +10,31 @@ int main()
         system("cls");
 
     do {
-        cout << "1. Insert at Beginning" << endl;
-        cout << "2. Insert at End" << endl;
-        cout << "3. Insert at Position" << endl;
-        cout << "4. Delete at Beginning" << endl;
-        cout << "5. Delete at End" << endl;
-        cout << "6. Delete at Position" << endl;
-        cout << "7. Display List" << endl;
-        cout << "8. Search Element" << endl;
-        cout << "9. Exit" << endl;
-        cout << "Enter your choice: ";
+        cout << "1. INSERT AT BEGINNING" << endl;
+        cout << "2. INSERT AT END" << endl;
+        cout << "3. INSERT AT POSITION" << endl;
+        cout << "4. DELETE AT BEGINNING" << endl;
+        cout << "5. DELETE AT END" << endl;
+        cout << "6. DELETE AT POSITION" << endl;
+        cout << "7. DISPLAY LIST" << endl;
+        cout << "8. SEARCH ELEMENT" << endl;
+        cout << "9. EXIT" << endl;
+        cout << "ENTER YOUR CHOICE: ";
         cin >> choice;
 
         switch (choice) {
             case 1:
-                cout << "Enter data to insert at beginning: ";
+                cout << "ENTER DATA TO INSERT AT BEGINNING: ";
                 cin >> data;
                 list.insertAtBeg(data);
                 break;
             case 2:
-                cout << "Enter data to insert at end: ";
+                cout << "ENTER DATA TO INSERT AT END: ";
                 cin >> data;
                 list.insertAtEnd(data);
                 break;
             case 3:
-                cout << "Enter data and position to insert: ";
+                cout << "ENTER DATA AND POSITION TO INSERT: ";
                 cin >> data >> pos;
                 list.insertAtPos(data, pos);
                 break;
@@ -45,7 +45,7 @@ int main()
                 list.deleteAtEnd();
                 break;
             case 6:
-                cout << "Enter position to delete: ";
+                cout << "ENTER POSITION TO DELETE: ";
                 cin >> pos;
                 list.deleteAtPos(pos);
                 break;
@@ -53,7 +53,7 @@ int main()
                 list.display();
                 break;
             case 8:
-                cout << "Enter element to search: ";
+                cout << "ENTER ELEMENT TO SEARCH: ";
                 cin >> data;
                 list.search(data);
                 break;
@@ -61,9 +61,9 @@ int main()
                 // list.~SLL();
                 break;
             default:
-                cout << "Invalid choice! Please try again." << endl;
+                cout << "INVALID CHOICE! PLEASE TRY AGAIN." << endl;
         }
-        cout << "Press Enter...";
+        cout << "PRESS ENTER...";
         cin.ignore(); cin.get();
         if (system("clear") != 0)
             system("cls");

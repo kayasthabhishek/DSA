@@ -12,36 +12,36 @@ int main()
     int choice, data, pos;
     system(SYS_CLEAR);
     printf("SINGLY LINKED LIST IMPLEMENTATION\n");
-    printf("SLL created successfully!\n");
+    printf("SLL CREATED SUCCESSFULLY.\n");
     do
     {
-        printf("\n1. Insert at beginning\n");
-        printf("2. Insert at end\n");
-        printf("3. Insert at position\n");
-        printf("4. Delete at beginning\n");
-        printf("5. Delete at end\n");
-        printf("6. Delete at position\n");
-        printf("7. Display list\n");
-        printf("8. Search element\n");
-        printf("9. Exit\n");
-        printf("Enter your choice: ");
+        printf("\n1. INSERT AT BEGINNING\n");
+        printf("2. INSERT AT END\n");
+        printf("3. INSERT AT POSITION\n");
+        printf("4. DELETE AT BEGINNING\n");
+        printf("5. DELETE AT END\n");
+        printf("6. DELETE AT POSITION\n");
+        printf("7. DISPLAY LIST\n");
+        printf("8. SEARCH ELEMENT\n");
+        printf("9. EXIT\n");
+        printf("ENTER YOUR CHOICE: ");
         scanf("%d", &choice);
 
         
         switch (choice)
         {
             case 1:
-                printf("Enter data: ");
+                printf("ENTER DATA: ");
                 scanf("%d", &data);
                 insertAtBeg(&list, data);
                 break;
             case 2:
-                printf("Enter Data: ");
+                printf("ENTER DATA: ");
                 scanf("%d", &data);
                 insertAtEnd(&list, data);
                 break;
             case 3:
-                printf("Enter data and position (separate with space): ");
+                printf("ENTER DATA AND POSITION (SEPARATE WITH SPACE): ");
                 scanf("%d %d", &data, &pos);
                 insertAtPos(&list, data, pos);
                 break;
@@ -52,7 +52,7 @@ int main()
                 deleteAtEnd(&list);
                 break;
             case 6:
-                printf("Enter position to delete: ");
+                printf("ENTER POSITION TO DELETE: ");
                 scanf("%d", &pos);
                 deleteAtPos(&list, pos);
                 break;
@@ -60,7 +60,7 @@ int main()
                 display(&list);
                 break;
             case 8:
-                printf("Enter element to search: ");
+                printf("ENTER ELEMENT TO SEARCH: ");
                 scanf("%d", &data);
                 search(&list, data);
                 break;
@@ -68,9 +68,9 @@ int main()
                 release(&list);
                 break;
             default:
-                printf("Invalid choice! Please try again.\n");
+                printf("INVALID CHOICE! PLEASE TRY AGAIN.\n");
             }
-        printf("Press Enter...\n");
+        printf("PRESS ENTER...\n");
         getchar();
         getchar();
         system(SYS_CLEAR);
