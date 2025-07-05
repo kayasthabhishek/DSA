@@ -163,16 +163,15 @@ void deleteAtPos(SLL* list, int pos)
     {
         Node* current = list->head;
         int i;
-        for (i = 1; i < pos - 1; ++i)
-        {
-            if (current == NULL)
-            {
-                printf("POSITION OUT OF BOUNDS\n");
-                return;
-            }
+        for (i = 1; i < pos - 1 && current != NULL; ++i) {
             current = current->next;
         }
-
+        
+        if (current == NULL)
+        {
+            printf("POSITION OUT OF BOUNDS\n");
+            return;
+        }
         // current is now pointing to pos-1 node
         if (current->next == NULL)
             deleteAtEnd(list);
@@ -241,8 +240,10 @@ void release(SLL* list)
     Node* temp;
     Node* i = list->head;
 
+    printf("RELEASING MEMORY...\n");
     while (i != NULL)
     {
+        printf("RELEASE: %d\n", i->data);
         temp = i;
         i = i->next;
         free(temp);

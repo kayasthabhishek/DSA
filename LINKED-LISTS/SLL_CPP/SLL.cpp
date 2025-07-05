@@ -191,7 +191,9 @@ SLL::~SLL()
 {
     Node* temp;
     Node* i = head;
+    cout << "RELEASING MEMORY..." << endl;
     while (i != nullptr) {
+        cout << "RELEASE: " << i->data << endl;
         temp = i;
         i = i->next;
         delete temp;
