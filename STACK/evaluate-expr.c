@@ -21,7 +21,8 @@ int main()
 {
     char expr[20];
     
-    printf("ENTER AN INTEGER EXPRESSION TO EVALUATE (POSTFIX / PREFIX): ");
+    printf("EVALUATE POSTFIX / PREFIX EXPRESSIONS\n");
+    printf("ENTER AN EXPRESSION (NO WHITESPACES): ");
     scanf("%s", expr);
     printf("%s%s\n","ENTERED EXPRESSION: ",expr);
 
@@ -88,7 +89,7 @@ int eval(int symb, int op1, int op2)
         break;
 
         default: 
-        printf("ILLEGAL OPERATION");
+        printf("ILLEGAL OPERATION\n");
         return 0;
     }
 }
@@ -112,7 +113,7 @@ int EvalPostfix(char* expr)
         }
         else
         {
-            printf("INVALID!");
+            printf("INVALID ");
             return 0;
         }
     }
@@ -142,7 +143,7 @@ int EvalPrefix(char* expr)
         }
         else
         {
-            printf("INVALID CHARACTER! '%c'\n", *p);
+            printf("INVALID '%c'\n", *p);
             return 0;
         }
         p--;
