@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX_SIZE 5
+
+#define MAX_SIZE 100
 
 typedef struct {
     int TOS;
-    int data[MAX_SIZE];
+    char data[MAX_SIZE];
 } Stack;
 
 void init(Stack* ps);
-void push(Stack* ps, int item);
+void push(Stack* ps, char item);
 int pop(Stack* ps);
 int peek(Stack* ps);
 int isEmpty(Stack* ps);
 int isFull(Stack* ps);
 void display(Stack* ps);
+
 
 int main()
 {
@@ -21,56 +23,49 @@ int main()
     init(&s);
     
     int choice;
-    int value;
+    char value;
     do {
-        printf("\n--- Stack Menu ---\n");
-        printf("1. Push\n");
-        printf("2. Pop\n");
-        printf("3. isEmpty\n");
-        printf("4. isFull\n");
-        printf("5. Peek TOS\n");
-        printf("6. Display\n");
-        printf("7. Exit\n");
-        printf("Enter your choice: ");
+        printf("\n--- SINGLE CHARACTER STACK ---\n");
+        printf("1. PUSH\n");
+        printf("2. POP\n");
+        printf("3. PEEK TOS\n");
+        printf("4. DISPLAY\n");
+        printf("5. EXIT\n");
+        printf("ENTER YOUR CHOICE: ");
         scanf("%d", &choice);
-
+        
         switch (choice) {
             case 1:
-                printf("Enter value to push: ");
-                scanf("%d", &value);
+                printf("ENTER CHARACTER TO PUSH: ");
+                scanf(" %c", &value);
                 push(&s, value);
                 break;
             case 2:
                 value = pop(&s);
                 if (value != -1)
-                    printf("Popped value: %d\n", value);
+                printf("POPPED CHARACTER: %c\n", value);
                 break;
             case 3:
-                isEmpty(&s) ? printf("Stack is empty.\n") : printf("Stack is not empty.\n");
-                break;
-            case 4:
-                isFull(&s) ? printf("Stack is full.\n") : printf("Stack is not full.\n");
-                break;
-            case 5:
                 value = peek(&s);
                 if (value != -1)
-                    printf("Top of Stack: %d\n", value);
+                    printf("TOP OF STACK: %c\n", value);
                 break;
-            case 6:
+            case 4:
                 display(&s);
                 break;
-            case 7:
+                case 5:
                 printf("Exiting program.\n");
                 break;
-            default:
-                printf("Invalid choice. Please try again.\n");
+                default:
+                printf("INVALID CHOICE.\n");
         }
-        printf("\n(Press Enter)");
-        getchar();
-        getchar();
-        system("clear");
+        printf("\n(PRESS ENTER TO CONTINUE)");
+        getchar(); getchar();
+        if (system("clear") != 0) {
+            system("cls");
+        }
 
-    } while (choice != 7);
+    } while (choice != 5);
 
     return 0;
 }
@@ -88,19 +83,20 @@ int isEmpty(Stack* ps) {
     return ps->TOS == -1;
 }
 
-void push(Stack* ps, int obj)
+void push(Stack* ps, char obj)
 {
     if (ps->TOS == MAX_SIZE-1) {
-        printf("Stack Overflow. '%d' not pushed!\n", obj);
+        printf("STACK OVERFLOW. '%c' NOT PUSHED!\n", obj);
         return;
     }
+
     ps->data[++(ps->TOS)] = obj;
 }
 
 int pop(Stack* ps)
 {
     if (ps->TOS == -1) {
-        printf("%s", "Underflow on pop\n");
+        printf("%s", "STACK UNDERFLOW ON POP\n");
         return -1;
     }
     
@@ -110,7 +106,7 @@ int pop(Stack* ps)
 int peek(Stack* ps)
 {
     if (ps->TOS == -1) {
-        printf("%s", "Stack empty\n");
+        printf("%s", "STACK EMPTY\n");
         return -1;
     }
     else
@@ -119,12 +115,12 @@ int peek(Stack* ps)
 
 void display(Stack* ps) {
     if (ps->TOS == -1) {
-        printf("Stack empty.\n");
+        printf("STACK EMPTY.\n");
         return;
     }
 
-    printf("Stack Elements:\n");
+    printf("STACK ELEMENTS:\n");
     for (int i = ps->TOS; i >= 0; i--) {
-        printf("-> %d ", ps->data[i]);
+        printf("-> %c ", ps->data[i]);
     }
 }
