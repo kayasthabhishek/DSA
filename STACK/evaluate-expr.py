@@ -25,9 +25,9 @@ def EvalPrefix(expr):
     stack = []
 
     for token in reversed(expr.split()):
-        if token not in operators:
+        if token.replace('.', '', 1).isdigit():
             stack.append(float(token))
-        else:
+        elif token in operators:
             op1 = stack.pop()
             op2 = stack.pop()
 
@@ -39,6 +39,11 @@ def EvalPrefix(expr):
                 case '^': result = op1 ** op2
 
             stack.append(result)
+        else:
+            raise ValueError(f"INVALID TOKEN: '{token}'")
+
+    if len(stack) != 1:
+        raise ValueError("INVALID PREFIX EXPRESSION")
 
     return stack[0]
 
