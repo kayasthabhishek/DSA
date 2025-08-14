@@ -126,17 +126,17 @@ gcc radix-sort.c -o radix-sort -O0
     - Its main advantage is that the computers represent data in binary form which can be sorted easily by using radix sort
     - Its main disadvantage is that it requires more space than other sorting algorithms
 
-
+<!-- 
 ### TIME AND SPACE COMPLEXITIES
 
 | ***SORTING ALGORITHMS*** | ***TIME COMPLEXITY*** | ***SPACE COMPLEXITY***
 |--------------------------|-----------------------|-----------------------
-| Bubble Sort              | O(n^2)                | O(1)
-| Selection Sort           | O(n^2)                | O(1)
-| Insertion Sort           | O(n^2)                | O(1)
+| Bubble Sort              | O(n^2)                | O(n)
+| Selection Sort           | O(n^2)                | O(n)
+| Insertion Sort           | O(n^2)                | O(n)
 | Merge Sort               | O(n log n) / O(n^2)   | O(n)
 | Quick Sort               | O(n log n)            | O(log n)
 | Heap Sort                | O(n log n)            | O(1)
 | Shell Sort               | O(n log n)            | O(1)
-| Radix Sort               | O(nk)                 | O(n + k)
+| Radix Sort               | O(nk)                 | O(n + k) -->
 
