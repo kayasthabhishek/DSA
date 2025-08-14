@@ -34,7 +34,7 @@ int main()
 {
     int A[MAX];
     int len, i;
-        time_t t1, t2;
+    clock_t t1, t2;
     double diff;
     
     do {
@@ -52,12 +52,11 @@ int main()
     printf("UNSORTED ARRAY: ");
     display(A, len);
 
-    t1 = time(NULL);
+    t1 = clock();
     insertion_sort(A, len);
-    t2 = time(NULL);
+    t2 = clock();
 
-
-    diff = difftime(t2, t1);
+    diff = (double)(t2 - t1) / CLOCKS_PER_SEC;
     printf("SORTED ARRAY USING INSERTION-SORT: ");
     display(A, len);
     printf("TIME: %.6f seconds", diff);

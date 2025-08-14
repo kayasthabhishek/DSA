@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <ctime>
 
 using namespace std;
 
@@ -37,11 +38,18 @@ int main()
 {
     int arr[] = {23, 29, 15, 19, 31, 7, 9, 5, 2};
     int n = sizeof(arr) / sizeof(arr[0]);
-    
+
+    clock_t t1, t2;
+    double diff;
+
+    t1 = clock();
     shellSort(arr, n);
-    
-    cout << "Sorted array: \n";
+    t2 = clock();
+
+    diff = (double)(t2 - t1) / CLOCKS_PER_SEC;
+    cout << "SORTED ARRAY: \n";
     display(arr, n);
-    
+    cout << "TIME TAKEN: " << diff << " seconds\n";
+
     return 0;
 }

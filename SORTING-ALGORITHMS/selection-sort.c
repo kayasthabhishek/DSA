@@ -39,7 +39,7 @@ int main()
 {
     int A[MAX];
     int len, i;
-    time_t t1, t2;
+    clock_t t1, t2;
     double diff;
     
     do {
@@ -54,16 +54,16 @@ int main()
         A[i] = rand() % (MAX*2);
     }
 
-    printf("UNSORTED ARRAY: ");
-    display(A, len);
+    // printf("UNSORTED ARRAY: ");
+    // display(A, len);
 
-    t1 = time(NULL);
+    t1 = clock();
     selection_sort(A, len);
-    t2 = time(NULL);
+    t2 = clock();
 
-    diff = difftime(t2, t1);
-    printf("SORTED ARRAY USING SELECTION-SORT: ");
-    display(A, len);
+    diff = (double)(t2 - t1) / CLOCKS_PER_SEC;
+    // printf("SORTED ARRAY USING SELECTION-SORT: ");
+    // display(A, len);
     printf("TIME: %.6f seconds", diff);
 
     return 0;
